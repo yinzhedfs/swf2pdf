@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # by yinzhedfs
 
 work_dir=`pwd`            # 工作目录
