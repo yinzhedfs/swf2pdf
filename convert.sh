@@ -5,9 +5,10 @@ work_dir=`pwd`            # 工作目录
 source_dir="swfFiles"     # swf文件存放目录
 dest_dir="pdfFiles"       # 转换后的pdf存放目录
 png_tmp_dir="tmp"         # swf生成的临时png文件目录
+swf_done_dir="swfDone"    # 已完成swd目录
 logs_dir="logs"           # 日志目录
-x_axis="1920"             # png图片长边像素
-y_axis="1440"             # png图片宽边像素
+y_axis="1920"             # png图片长边像素
+x_axis="1440"             # png图片宽边像素
 count=0                   # 转换文件计数
 thread_nums=4             # 线程数
 
@@ -38,6 +39,7 @@ function swf_convert(){
     $work_dir/convert `ls| sort -n` $work_dir/$dest_dir/`echo $swf| awk -F'.' '{print $1}'`.pdf 2>>$work_dir/$logs_dir/convert_err.log
     echo "* the $count SWF file converted to PDF done!"
     rm -rf $work_dir/$tmp_dir
+    mv $work_dir/$source_dir/$filename $work_dir/$swf_done_dir/
 }
 
 for swf in `ls $source_dir` ;do
