@@ -7,8 +7,8 @@ dest_dir="pdfFiles"       # 转换后的pdf存放目录
 png_tmp_dir="tmp"         # swf生成的临时png文件目录
 swf_done_dir="swfDone"    # 已完成swd目录
 logs_dir="logs"           # 日志目录
-y_axis="1920"             # png图片长边像素
-x_axis="1440"             # png图片宽边像素
+x_axis="1920"             # png图片长边像素
+y_axis="1440"             # png图片宽边像素
 count=0                   # 转换文件计数
 thread_nums=4             # 线程数
 
